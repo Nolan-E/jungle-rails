@@ -3,7 +3,7 @@ class Admin::DashboardController < ApplicationController
   http_basic_authenticate_with name: ENV['ADMIN_USERNAME'], password: ENV['ADMIN_PASSWORD']
 
   def show
-    @dashboard_count = Product.all.count
-    @dashboard_cats = Category.all.count
+    @products_count = Product.all.count
+    @categories_count = Category.all.count
   end
 end
