@@ -5,6 +5,14 @@ class Sale < ActiveRecord::Base
     where("sales.starts_on < ? AND sales.ends_on >= ?", Date.current, Date.current)
   end
 
+  def self.curr_percent
+    where("sales.starts_on < ? AND sales.ends_on >= ?", Date.current, Date.current).pluck("percent_off").first
+  end
+
+  def self.curr_sale
+    where("sales.starts_on < ? AND sales.ends_on >= ?", Date.current, Date.current).pluck("name").first
+  end
+
   def finished?
     ends_on < Date.current
   end
