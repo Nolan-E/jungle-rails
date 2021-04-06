@@ -3,10 +3,6 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'Validations' do
     
-    # before do
-      
-    # end
-
     it 'should NOT save a new user to DB while password fields do not match' do
       user = User.create(
         firstname: "test",
@@ -48,6 +44,29 @@ RSpec.describe User, type: :model do
       )
 
       expect(user2).to_not be_valid
+    end
+
+    it 'should not save a new user to DB when password is less than 6 characters' do
+      user = User.create(
+        firstname: "test",
+        lastname: "test",
+        email: "testspec@test.com",
+        password: "spec",
+        password_confirmation: "spec"
+      )
+
+      expect(user).to_not be_valid
+    end
+    it 'should save a new user to DB when password is 6 or more characters' do
+      user = User.create(
+        firstname: "test",
+        lastname: "test",
+        email: "testspec@test.com",
+        password: "spec12",
+        password_confirmation: "spec12"
+      )
+
+      expect(user).to be_valid
     end
   end
 end
