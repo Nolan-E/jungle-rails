@@ -10,16 +10,16 @@
       <%= form_for :user, url: '/users' do |f| %>
 
         <div class="form-group">
+          <%= f.label :email %>
+          <%= f.text_field :email, class: 'form-control' %>
+        </div>
+        <div class="form-group">
           <%= f.label :firstname %>
           <%= f.text_field :firstname, class: 'form-control' %>
         </div>
         <div class="form-group">
           <%= f.label :lastname %>
           <%= f.text_field :lastname, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.text_field :email, class: 'form-control' %>
         </div>
         <div class="form-group">
           <%= f.label :password %>
