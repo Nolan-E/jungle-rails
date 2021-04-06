@@ -69,4 +69,23 @@ RSpec.describe User, type: :model do
       expect(user).to be_valid
     end
   end
+
+  describe '.authenticate_with_credentials' do
+
+    before do
+      @user = User.create(
+        firstname: "Hello",
+        lastname: "World",
+        email: "HelloWorld@test.com",
+        password: "spec123",
+        password_confirmation: "spec123"
+      )
+    end
+
+    it 'should login a user with authentication' do
+      user1 = User.authenticate_with_credentials("HelloWorld@test.com", "spec123")
+
+      expect(user1).to eq(@user)
+    end
+  end
 end
