@@ -101,7 +101,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'should login a user while ignoring text casing with valid authentication' do
-      user = User.authenticate_with_credentials("HELLOWORLDd@test.com", "spec123")
+      user = User.authenticate_with_credentials("HELLOWORLD@test.com", "spec123")
 
       expect(user).to eq(@user)
     end

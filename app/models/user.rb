@@ -12,17 +12,15 @@ class User < ActiveRecord::Base
 
   def scrub_email
     self.email.downcase!
-    p self
   end
 
   def self.authenticate_with_credentials(email, password)
     user = User.find_by_email(email.strip.downcase)
-    p user
     if user && user.authenticate(password)
-      user
-    else
-      nil
+      return user
     end
+
+    nil
   end
 
 end
