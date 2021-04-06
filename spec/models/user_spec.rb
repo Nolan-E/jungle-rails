@@ -82,10 +82,16 @@ RSpec.describe User, type: :model do
       )
     end
 
-    it 'should login a user with authentication' do
-      user1 = User.authenticate_with_credentials("HelloWorld@test.com", "spec123")
+    it 'should login a user with valid authentication' do
+      user = User.authenticate_with_credentials("HelloWorld@test.com", "spec123")
 
-      expect(user1).to eq(@user)
+      expect(user).to eq(@user)
+    end
+
+    it 'should NOT login a user with invalid authentication' do
+      user = User.authenticate_with_credentials("HelloWorld@test.com", "spec1234")
+
+      expect(user).to be nil
     end
   end
 end
