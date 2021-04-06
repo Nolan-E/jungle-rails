@@ -93,5 +93,18 @@ RSpec.describe User, type: :model do
 
       expect(user).to be nil
     end
+
+    it 'should login a user while ignoring whitespace with valid authentication' do
+      user = User.authenticate_with_credentials("   HelloWorld@test.com   ", "spec123")
+
+      expect(user).to eq(@user)
+    end
+
+    it 'should login a user while ignoring text casing with valid authentication' do
+      user = User.authenticate_with_credentials("HELLOWORLDd@test.com", "spec123")
+
+      expect(user).to eq(@user)
+    end
+
   end
 end
