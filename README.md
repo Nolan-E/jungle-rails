@@ -4,6 +4,21 @@ Jungle is a mini e-commerce application built with Rails 4.2 for purposes of tea
 
 ***
 # Final Product
+#### Home Page:
+!['Home-Page'](https://github.com/Nolan-E/jungle-rails/blob/master/docs/Homepage.png?raw=true)
+<br>
+
+#### My Cart:
+!['My-Cart'](https://github.com/Nolan-E/jungle-rails/blob/master/docs/My%20Cart.png?raw=true)
+<br>
+
+#### Admin Dashboard:
+!['Admin-Dashboard'](https://github.com/Nolan-E/jungle-rails/blob/master/docs/Admin%20Dashboard.png?raw=true)
+<br>
+
+#### Admin Sales:
+!['Admin-Sales'](https://github.com/Nolan-E/jungle-rails/blob/master/docs/Admin%20Sales.png?raw=true)
+<br>
 
 ***
 # Setup
@@ -33,8 +48,11 @@ Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
+***
 ## Dependencies
 * Ruby 2.6.6
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+***
